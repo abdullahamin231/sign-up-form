@@ -1,0 +1,82 @@
+body{
+    margin: 0; padding: 0;
+    height: 100vh;
+}
+.container{
+    display: flex;
+}
+.image-container {
+    position: relative;
+    width: 500px;
+    
+}
+ .image {
+    position: absolute;
+    width: 500px; height: 100vh;
+    z-index: -1;
+  }
+  .image-body {
+    margin-top: 25%;
+    box-sizing: border-box;
+    width: 500px;
+    background: black;
+    opacity: 0.6;
+    text-align: center;
+    font-size: 60px;
+    font-family: Roboto;
+    display: flex;
+    justify-content: center;
+    column-gap: 25px;
+    align-items: center;
+  }
+
+.image-column{
+    display: flex; flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 500px;
+    box-sizing: border-box;
+}
+
+.image-heading {
+    position: absolute;
+  }
+.card-paragraph{
+    color: white;
+    margin: 10px;
+}
+.credits{
+    margin-top: 78%;
+    font-size: smaller;
+    box-sizing: border-box;
+    display: flex; flex-direction: row;
+    justify-content: center; align-items: center;
+    column-gap: 5px;
+}
+.credits > p{
+    color: #FFFF;
+    opacity: 0.8;
+}
+.credits > a{
+    opacity: 0.8;
+}
+#logo{
+    height: 140px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+a:hover{
+    cursor: pointer;
+    color: rgb(0, 98, 255);
+    text-decoration: solid black;
+}
+a:visited{
+    text-decoration: none; color: rgb(241, 255, 242);
+}
+
+.form-container{
+    background-color: red;
+    height: 100vh;
+}
+  
