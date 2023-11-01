@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sign up form</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -31,19 +34,19 @@
             </div>
             <div class="middle">
                <p id="lets">Let's do this!</p>
-                <form action="submit">
+                <form id="formA">
                     <div id="name">
                         <div>
                             <label for="first_name">FIRST NAME </label>
-                            <input type="text" id="first_name">
+                            <input type="text">
                         </div>
                         <div>
                             <label for="email">EMAIL </label>
-                            <input type="email" id="email">
+                            <input type="text">
                         </div>
                         <div>
-                            <label for="Password">PASSWORD </label>
-                            <input type="password" id="pass">
+                            <label for="password">PASSWORD </label>
+                            <input type="password" id="password" required>                        
                         </div>
                         
                     </div>
@@ -51,16 +54,16 @@
                     <div id="contact">
                         <div>
                             <label for="last_name">LAST NAME </label>
-                            <input type="text" id="last_name">
+                            <input type="text">
                         </div>
                     
                         <div>
                             <label for="Number">PHONE NUMBER </label>
-                            <input type="number" id="phoneNumeber">
+                            <input type="number">
                         </div>
                         <div>
-                            <label for="Password">CONFIRM PASSWORD </label>
-                            <input type="password" id="cfmpass">
+                            <label for="password">CONFIRM PASSWORD </label>
+                            <input type="password" id="confirm_password" required>
                         </div>
 
                     </div>
@@ -68,13 +71,29 @@
                     
                 </form>
            </div>
-           <div class="bottom">
-                <button id="create-Btn">
+           <div class="bottom" >
+                <button id="create-Btn" type="submit" form="formA">
                     Create Account
                 </button>
                 <p>Already have an account? <span><a href="#">Log in</a></span></p>
            </div>
         </div>
     </div>
+    <script>
+        var password = document.getElementById("password");
+                var confirm_password = document.getElementById("confirm_password");
+
+                function validatePassword() {
+                    if (password.value != confirm_password.value) {
+                        confirm_password.setCustomValidity("Passwords Don't Match");
+                    } else {
+                        confirm_password.setCustomValidity('');
+                    }
+                }
+
+                password.onchange = validatePassword;
+                confirm_password.onkeyup = validatePassword;
+
+    </script>
 </body>
 </html>
